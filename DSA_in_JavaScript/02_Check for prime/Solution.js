@@ -41,3 +41,31 @@ greater than √n, its paired divisor must be smaller than √n.
 I also skip even numbers by incrementing by 2, which cuts the iterations in half.
 The condition i * i <= num avoids repeated calls to Math.sqrt(), making the loop more efficient.
 Overall, the algorithm runs in O(√n/2), which is effectively O(√n).`
+
+
+
+// revision 1
+
+function checkPrime(num) {
+
+    if (num <= 1) {
+        return false;
+    }
+    if (num % 2 === 0) {
+        return false;
+    }
+    for (let i = 3; i * i < num; i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+let num = 17;
+if (checkPrime(num)) {
+    console.log(num + " is a Prime Number!")
+} else {
+    console.log(num + " is not a Prime Number!")
+}
+
