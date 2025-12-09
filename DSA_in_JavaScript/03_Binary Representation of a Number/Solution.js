@@ -1,8 +1,8 @@
 
 function decimalToBinary(num) {
     if (num === 0) return "0";
-    let binary = ""; 
-    
+    let binary = "";
+
     while (num > 0) {
         binary = (num % 2) + binary;
         num = Math.floor(num / 2);
@@ -30,3 +30,16 @@ This method effectively builds the binary representation in O(log n) time comple
 
 
 `
+
+
+function binaryRepresentations(num) {
+    if (num === 0) return "0";
+    let binary = "";
+    while (num > 0) {
+        binary = num % 2 + binary;
+        num = Math.floor(num / 2);
+    }
+    return binary;
+}
+
+console.log(binaryRepresentations(number));
