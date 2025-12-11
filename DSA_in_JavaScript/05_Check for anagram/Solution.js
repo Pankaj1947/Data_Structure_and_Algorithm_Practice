@@ -22,10 +22,10 @@ function checkAnagram(a, b) {
 
 }
 
-let a="abcdaa";
-let b= "cdbaaa";
+let a = "abcdaa";
+let b = "cdbaaa";
 
-checkAnagram(a,b);
+checkAnagram(a, b);
 
 
 
