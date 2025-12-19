@@ -4,18 +4,22 @@ function checkAnagram(a, b) {
         console.log("Not an Anagram");
         return;
     }
-    let charCount = {};
+    let charObj = {};
     for (let char of a) {
-        charCount[char] = (charCount[char] || 0) + 1;
-        console.log(charCount);
+        if (charObj[char] === undefined) {
+            charObj[char] = 1;
+        } else {
+            charObj[char] = charObj[char] + 1;
+        }
+        console.log(charObj);
     }
     for (let char of b) {
-        if (!charCount[char]) {
+        if (!charObj[char]) {
             console.log("Not an Anagram");
             return;
         }
-        charCount[char]--;
-        console.log(charCount);
+        charObj[char]--;
+        console.log(charObj);
     }
     console.log("Anagram");
 
@@ -26,6 +30,7 @@ let a = "abcdaa";
 let b = "cdbaaa";
 
 checkAnagram(a, b);
+areAnagram(a, b);
 
 
 
@@ -49,3 +54,29 @@ making it efficient for this problem.
 
 `
 
+// revision
+
+function areAnagram(a, b) {
+    if (a.length != b.length) {
+        console.log("Not an Anagram");
+        return;
+    }
+
+    let charObj = {};
+    for (char of a) {
+        if (charObj[char] === undefined) {
+            charObj[char] = 1
+        } else {
+            charObj[char] += 1;
+        }
+    }
+
+    for (char of b) {
+        if (!charObj[char]) {
+            console.log("Not an Anagram");
+            return;
+        }
+        charObj[char]--
+    }
+    console.log("Anagram")
+}
