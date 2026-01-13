@@ -58,7 +58,7 @@ This method ensures that we account for the contribution of each bit based on it
 ultimately yielding the correct decimal representation of the binary input.
 
 `
-
+// Revision
 function binarytonum(binaryStr) {
     let number = 0;
     let power = 0;
